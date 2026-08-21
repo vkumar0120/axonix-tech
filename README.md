@@ -23,6 +23,20 @@ npm run build
 NODE_ENV=production npm start
 ```
 
+## Vercel deployment
+
+1. Import the repository into Vercel.
+2. Set the framework preset to Vite.
+3. Configure the environment variables in Vercel:
+
+```env
+RESEND_API_KEY=your_resend_key
+FROM_ADDRESS=your_verified_sender@example.com
+TO_ADDRESS=support@axonixtechnologies.com
+```
+
+4. Deploy. The app uses the Vercel rewrite rules in `vercel.json` and the `api/contact.js` serverless function for contact form submissions.
+
 ## Environment variables
 
 Create a `.env` file based on `.env.example` before running in production.

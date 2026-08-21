@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Axonix Technologies social preview">
+  <defs>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#e2e8f0"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="url(#panel)"/>
+  <text x="110" y="210" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="32" letter-spacing="4">AXONIX TECHNOLOGIES</text>
+  <text x="110" y="300" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">Secure Digital</text>
+  <text x="110" y="388" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">Transformation</text>
+  <text x="110" y="462" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="28">Software solutions for government, enterprise, and public impact</text>
+</svg>

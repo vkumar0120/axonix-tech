@@ -330,14 +330,18 @@
 
 .solutions-grid,
 .service-page-grid,
-.pricing-grid {
+.pricing-grid,
+.industry-grid,
+.location-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
 .solution-card,
-.pricing-card {
+.pricing-card,
+.industry-card,
+.location-card {
   background: rgba(15, 23, 42, 0.72);
   border: 1px solid rgba(148, 163, 184, 0.12);
   border-radius: 22px;
@@ -437,6 +441,122 @@
 
 .service-card {
   min-height: 240px;
+}
+
+.service-card-link,
+.content-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.insight-card {
+  min-height: 240px;
+}
+
+.service-landing-page {
+  display: grid;
+  gap: 32px;
+  padding-top: 48px;
+}
+
+.service-hero {
+  display: grid;
+  gap: 18px;
+}
+
+.service-hero h1 {
+  margin: 0;
+  max-width: 900px;
+  font-size: clamp(2.5rem, 4vw, 4.25rem);
+  line-height: 0.97;
+  letter-spacing: -0.06em;
+}
+
+.service-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.service-article,
+.service-benefits,
+.service-faqs,
+.service-related {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 24px;
+  padding: 28px 26px;
+}
+
+.service-article {
+  display: grid;
+  gap: 18px;
+}
+
+.service-article p,
+.faq-item p,
+.service-benefits li {
+  color: #bfd1e2;
+  line-height: 1.8;
+}
+
+.service-benefits h2,
+.service-faqs h2,
+.service-related h2 {
+  margin: 0 0 18px;
+  font-size: clamp(1.7rem, 2vw, 2.3rem);
+  letter-spacing: -0.04em;
+}
+
+.service-benefits ul {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.26);
+  border: 1px solid rgba(148, 163, 184, 0.11);
+}
+
+.faq-item h3 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  color: #edf5ff;
+}
+
+.service-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.82rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  color: #edf5ff;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .pricing-card {
@@ -639,6 +759,8 @@
   .solutions-grid,
   .service-page-grid,
   .pricing-grid,
+  .industry-grid,
+  .location-grid,
   .process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -661,6 +783,8 @@
   .solutions-grid,
   .service-page-grid,
   .pricing-grid,
+  .industry-grid,
+  .location-grid,
   .process-grid {
     grid-template-columns: 1fr;
   }
