@@ -230,6 +230,28 @@
   font-size: 0.82rem;
 }
 
+.google-ad-section {
+  padding-top: 34px;
+}
+
+.google-ad-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 18px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.google-ad-wrapper ins.adsbygoogle {
+  display: block !important;
+  width: min(100%, 728px);
+  min-height: 90px;
+}
+
 .promo-video-section {
   padding-top: 92px;
 }

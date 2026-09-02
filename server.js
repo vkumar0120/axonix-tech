@@ -11,7 +11,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const app = express()
 const port = process.env.PORT || 4000
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resendApiKey = process.env.RESEND_API_KEY
+const resend = resendApiKey ? new Resend(resendApiKey) : null
 const distPath = path.join(__dirname, 'dist')
 
 app.use(cors())
@@ -31,7 +32,7 @@ app.post('/api/contact', async (req, res) => {
   const fromAddress = process.env.FROM_ADDRESS || 'onboarding@resend.dev'
   const toAddress = process.env.TO_ADDRESS || 'support@axonixtechnologies.com'
 
-  if (!process.env.RESEND_API_KEY) {
+  if (!resend) {
     return res.status(500).json({
       message: 'Resend API key is missing. Add RESEND_API_KEY and FROM_ADDRESS to the environment.',
     })

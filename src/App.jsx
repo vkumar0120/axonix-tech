@@ -1,7 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import './App.css'
+
+const GOOGLE_AD_CLIENT = 'ca-pub-3352721202761209'
+const GOOGLE_AD_SLOT = '9962742150'
 
 const siteMeta = {
   title: 'Axonix Technologies | Custom Software Development & Digital Transformation',
@@ -898,6 +901,52 @@ function Layout() {
   )
 }
 
+function GoogleAdHomeBanner() {
+  useEffect(() => {
+    const existingScript = document.querySelector(
+      'script[src*="googlesyndication.com/pagead/js/adsbygoogle.js"]'
+    )
+
+    if (!existingScript) {
+      const script = document.createElement('script')
+      script.async = true
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_AD_CLIENT}`
+      script.crossOrigin = 'anonymous'
+      document.head.appendChild(script)
+    }
+
+    const pushAd = () => {
+      const adIns = document.querySelector('.home-page-google-ad ins.adsbygoogle')
+      if (window.adsbygoogle && adIns) {
+        window.adsbygoogle.push({})
+      }
+    }
+
+    if (window.adsbygoogle) {
+      pushAd()
+    } else {
+      window.setTimeout(pushAd, 300)
+    }
+  }, [])
+
+  return (
+    <section className="google-ad-section reveal">
+      <div className="google-ad-wrapper home-page-google-ad">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3352721202761209" crossOrigin="anonymous" />
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-3352721202761209"
+          data-ad-slot="9962742150"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+        <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
+      </div>
+    </section>
+  )
+}
+
 function HomePage() {
   const [isMuted, setIsMuted] = useState(true)
 
@@ -964,6 +1013,8 @@ function HomePage() {
           <span>Enterprise</span>
         </div>
       </section>
+
+      <GoogleAdHomeBanner />
 
       <section className="promo-video-section reveal">
         <div className="section-heading">
