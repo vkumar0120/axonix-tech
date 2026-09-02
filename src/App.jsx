@@ -5,6 +5,7 @@ import './App.css'
 
 const GOOGLE_AD_CLIENT = 'ca-pub-3352721202761209'
 const GOOGLE_AD_SLOT = '9962742150'
+const GOOGLE_AD_PUSH_KEY = '__axonixGoogleAdPushed__'
 
 const siteMeta = {
   title: 'Axonix Technologies | Custom Software Development & Digital Transformation',
@@ -916,8 +917,11 @@ function GoogleAdHomeBanner() {
     }
 
     const pushAd = () => {
+      if (window[GOOGLE_AD_PUSH_KEY]) return
+
       const adIns = document.querySelector('.home-page-google-ad ins.adsbygoogle')
       if (window.adsbygoogle && adIns) {
+        window[GOOGLE_AD_PUSH_KEY] = true
         window.adsbygoogle.push({})
       }
     }
@@ -925,23 +929,21 @@ function GoogleAdHomeBanner() {
     if (window.adsbygoogle) {
       pushAd()
     } else {
-      window.setTimeout(pushAd, 300)
+      window.setTimeout(pushAd, 500)
     }
   }, [])
 
   return (
     <section className="google-ad-section reveal">
       <div className="google-ad-wrapper home-page-google-ad">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3352721202761209" crossOrigin="anonymous" />
         <ins
           className="adsbygoogle"
           style={{ display: 'block' }}
-          data-ad-client="ca-pub-3352721202761209"
-          data-ad-slot="9962742150"
+          data-ad-client={GOOGLE_AD_CLIENT}
+          data-ad-slot={GOOGLE_AD_SLOT}
           data-ad-format="auto"
           data-full-width-responsive="true"
         />
-        <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
       </div>
     </section>
   )
