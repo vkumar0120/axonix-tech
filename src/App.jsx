@@ -1028,6 +1028,7 @@ function AdSenseBlock() {
   return (
     <div className="adsense-wrap" aria-label="Advertisement">
       <div className="ad-label">Advertisement</div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3352721202761209" crossOrigin="anonymous" />
       <ins
         className="adsbygoogle"
         style={{ display: 'block', width: '100%', minHeight: '90px' }}
@@ -1036,6 +1037,7 @@ function AdSenseBlock() {
         data-ad-format="auto"
         data-full-width-responsive="true"
       />
+      <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }} />
     </div>
   )
 }
