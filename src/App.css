@@ -230,26 +230,118 @@
   font-size: 0.82rem;
 }
 
-.google-ad-section {
-  padding-top: 34px;
+.story-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+  align-items: start;
 }
 
-.google-ad-wrapper {
+.story-copy {
+  padding-right: 12px;
+}
+
+.story-copy h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.1;
+  color: #edf5ff;
+}
+
+.story-copy p {
+  margin: 0 0 18px;
+  color: #c2d2e2;
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.story-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.story-card {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 22px;
+  padding: 22px 20px;
+}
+
+.story-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+  color: #edf5ff;
+}
+
+.story-card p {
+  margin: 0;
+  color: #b9c7d6;
+  line-height: 1.75;
+}
+
+.feature-grid,
+.outcome-grid,
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.feature-card,
+.outcome-card,
+.ai-card {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 22px;
+  padding: 24px 22px;
+  min-height: 220px;
+}
+
+.feature-card h3,
+.outcome-card h3,
+.ai-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.45rem;
+  color: #edf5ff;
+}
+
+.feature-card p,
+.outcome-card p,
+.ai-card p {
+  margin: 0;
+  color: #b9c7d6;
+  line-height: 1.75;
+}
+
+.ai-card {
+  background: linear-gradient(180deg, rgba(12, 31, 42, 0.9), rgba(15, 23, 42, 0.76));
+  border: 1px solid rgba(126, 231, 208, 0.18);
+  border-radius: 22px;
+  padding: 24px 22px;
+  min-height: 220px;
+}
+
+.cta-banner {
+  margin-top: 32px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 160px;
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(148, 163, 184, 0.12);
-  border-radius: 18px;
-  padding: 20px;
-  overflow: hidden;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(59, 130, 246, 0.12));
+  border: 1px solid rgba(125, 211, 252, 0.2);
 }
 
-.google-ad-wrapper ins.adsbygoogle {
-  display: block !important;
-  width: min(100%, 728px);
-  min-height: 90px;
+.cta-banner h3 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2vw, 2.4rem);
+  color: #edf5ff;
+}
+
+.home-faq-list {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .promo-video-section {
@@ -687,6 +779,28 @@
   font-weight: 600;
 }
 
+.adsense-wrap {
+  margin-top: 32px;
+  margin-bottom: 12px;
+  width: min(100%, 720px);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(15, 23, 42, 0.72);
+  padding: 12px 14px 10px;
+  text-align: center;
+}
+
+.ad-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #8ea4bb;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .site-footer {
   display: flex;
   align-items: center;
@@ -816,11 +930,13 @@
   }
 
   .trust-bar,
-  .site-footer {
+  .site-footer,
+  .cta-banner {
     padding: 18px 16px;
   }
 
-  .trust-bar {
+  .trust-bar,
+  .cta-banner {
     display: grid;
   }
 

@@ -1,11 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import './App.css'
-
-const GOOGLE_AD_CLIENT = 'ca-pub-3352721202761209'
-const GOOGLE_AD_SLOT = '9962742150'
-const GOOGLE_AD_PUSH_KEY = '__axonixGoogleAdPushed__'
 
 const siteMeta = {
   title: 'Axonix Technologies | Custom Software Development & Digital Transformation',
@@ -17,6 +13,7 @@ const siteMeta = {
 function Seo({ title, description, url = siteMeta.url }) {
   return (
     <Helmet>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3352721202761209" crossOrigin="anonymous" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta
@@ -34,18 +31,45 @@ function Seo({ title, description, url = siteMeta.url }) {
   )
 }
 
+const aiServices = [
+  {
+    title: 'AI Strategy & Roadmaps',
+    description:
+      'We assess your business, operations, and data maturity to design a realistic AI roadmap that identifies the highest-value opportunities and implementation priorities.',
+    icon: 'AI',
+  },
+  {
+    title: 'AI Workflow Automation',
+    description:
+      'We build intelligent processes to automate approvals, document triage, reporting, service routing, and repetitive operational tasks with AI-assisted decision support.',
+    icon: 'AU',
+  },
+  {
+    title: 'AI Experience Design',
+    description:
+      'We create AI-powered portals, assistants, recommendation systems, and smart user experiences that improve service access, engagement, and operational performance.',
+    icon: 'UX',
+  },
+]
+
 const solutions = [
+  {
+    title: 'AI Strategy & Innovation',
+    description:
+      'AI roadmap design, opportunity assessment, and intelligent automation strategies that help organizations prepare for the next era of digital transformation.',
+    icon: '01',
+  },
   {
     title: 'Digital Government Platforms',
     description:
       'Secure government software solutions, citizen portals, workflow automation, and public service applications built to improve accountability, transparency, and service delivery.',
-    icon: '01',
+    icon: '02',
   },
   {
     title: 'Enterprise Software Development',
     description:
       'Custom enterprise software development for internal systems, business applications, customer portals, and operational tools that streamline complex workflows.',
-    icon: '02',
+    icon: '03',
   },
   {
     title: 'Operational Automation',
@@ -121,6 +145,36 @@ const pricingPlans = [
 ]
 
 const servicePages = [
+  {
+    slug: 'ai-innovation',
+    label: 'AI Innovation & Intelligent Systems',
+    shortTitle: 'AI Innovation',
+    title: 'AI Innovation & Intelligent Systems | Axonix Technologies',
+    description:
+      'AI technology consulting, intelligent automation, and next-generation digital systems that help organizations invent and implement the new AI era.',
+    h1: 'AI innovation that turns data, workflows, and decision-making into strategic business advantage.',
+    intro:
+      'The AI era is no longer a future concept—it is a practical opportunity for organizations to improve service delivery, reduce operational friction, and unlock new levels of productivity. Axonix Technologies helps public institutions, enterprises, and growth-focused businesses invent practical AI solutions that fit real operational needs. We design intelligent systems that improve workflows, automate repetitive work, support better decisions, and create new digital capabilities without losing control, transparency, or governance.',
+    benefits: [
+      'AI strategy tailored to your mission, operations, and decision-making needs',
+      'Intelligent automation for repetitive tasks, approvals, and service workflows',
+      'Smart analytics and insight generation from operational data',
+      'Governed, secure AI systems built for real-world enterprise and public sector use',
+    ],
+    paragraphs: [
+      'AI technology is transforming how organizations work, compete, and serve communities. The opportunity is not only to automate repetitive tasks but also to build systems that help people make faster, better, and more informed decisions. At Axonix Technologies, we focus on implementing AI in ways that are practical, measurable, and anchored in the realities of the business. Instead of chasing hype, we help organizations identify the business problems where AI can create genuine value.',
+      'From workflow intelligence and document analysis to predictive decision support and conversational interfaces, AI can create powerful improvements across public service delivery and enterprise operations. We help clients evaluate where intelligent automation can reduce manual effort, improve clarity, and support stronger service outcomes. This may include recommendation engines, smart classification, summary generation, process augmentation, and agentic workflows that assist teams across high-volume or rules-based tasks.',
+      'Our approach is grounded in governance and implementation quality. AI systems must be trustworthy, explainable, and aligned with organizational goals. That means paying attention to data quality, human oversight, and the operational context in which the system will be used. We design AI solutions that augment teams rather than replace judgment, helping organizations build capacity while keeping accountability and control intact.',
+      'AI is especially valuable when it reduces friction in complex operational environments. For example, it can help triage incoming requests, route inquiries to the right team, summarize documents, detect anomalies in workflows, or generate first-pass recommendations for service teams. In public sector and enterprise settings, this can shorten response times, improve consistency, and reduce the time spent on repetitive administrative work.',
+      'The new AI era is also about innovation: building new digital experiences, smarter internal tools, and connected systems that can adapt as the organization evolves. Axonix Technologies helps organizations move from experimentation to implementation by designing solutions that are secure, purposeful, and ready for long-term use. We combine AI engineering with practical delivery disciplines so the result is not just a demo but a real operating capability.',
+      'Whether your organization is exploring AI for internal productivity, customer experience, or service modernization, our team can help turn that vision into a realistic implementation roadmap. We help define the problem, design the solution, integrate the technology responsibly, and support adoption across the organization. The outcome is a technology platform that helps you compete, innovate, and operate more effectively in the AI era.',
+    ],
+    faqs: [
+      { question: 'What is the best first AI use case for an organization?', answer: 'The best AI use case is one that reduces repetitive work, improves decision quality, or speeds up service delivery while being grounded in clear operational data and business value.' },
+      { question: 'Can AI be implemented safely in government or enterprise environments?', answer: 'Yes. Safe AI implementations rely on governance, data quality, human oversight, clear process boundaries, and responsible operational design. These are essential for trust and compliance.' },
+      { question: 'What types of AI systems do you build?', answer: 'We build intelligent automation workflows, decision support tools, document intelligence systems, conversational interfaces, and AI-enabled operational dashboards tailored to the client’s business context.' },
+    ],
+  },
   {
     slug: 'custom-software-development',
     label: 'Custom Software Development',
@@ -823,6 +877,70 @@ const stats = [
   { value: '24/7', label: 'operational support' },
 ]
 
+const valuePillars = [
+  {
+    title: 'Strategy before software',
+    text: 'We align each engagement to real operational pain points, service goals, and compliance realities before choosing a digital solution.',
+  },
+  {
+    title: 'Public-sector and enterprise fit',
+    text: 'Our systems are designed for accountability, transparency, process clarity, and long-term maintainability in regulated environments.',
+  },
+  {
+    title: 'Operational modernization',
+    text: 'We improve workflows, reporting, and digital service experiences so teams spend less time on manual work and more on value creation.',
+  },
+  {
+    title: 'Support that lasts',
+    text: 'From rollout to post-launch refinement, we help organizations keep systems stable, secure, and adaptable as needs evolve.',
+  },
+]
+
+const companyStory = [
+  {
+    title: 'Discovery-led design',
+    text: 'We begin by studying the actual work, systems, and service bottlenecks before drawing up a roadmap or writing code.',
+  },
+  {
+    title: 'Operationally practical technology',
+    text: 'Our solutions are designed for daily use, workflow clarity, and accountability rather than novelty for its own sake.',
+  },
+  {
+    title: 'Measured outcomes',
+    text: 'We help organizations track service quality, turnaround times, manual effort, and reporting improvements after implementation.',
+  },
+]
+
+const outcomeHighlights = [
+  {
+    title: 'Simplified citizen and employee journeys',
+    text: 'We redesign service flows to make information access, approvals, and request handling clearer and faster.',
+  },
+  {
+    title: 'Better visibility for leadership',
+    text: 'Dashboards and reporting systems give teams a reliable view of performance, bottlenecks, and service quality.',
+  },
+  {
+    title: 'Automation that reduces friction',
+    text: 'Routine approvals, alerts, and document workflows are structured so staff can focus on exceptions instead of repetitive admin work.',
+  },
+]
+
+const homeFaqs = [
+  {
+    question: 'What kinds of organizations do you work with?',
+    answer: 'We support government agencies, public institutions, enterprises, healthcare organizations, educational bodies, and service-focused businesses that need digital systems designed around operational realities.',
+  },
+  {
+    question: 'How do you approach a project?',
+    answer: 'We start with discovery, process mapping, and business goals. Then we design a solution, validate scope, build the system in phases where needed, and support delivery with clear reporting and follow-up.',
+  },
+  {
+    question: 'Can Axonix help modernize legacy systems?',
+    answer: 'Yes. We often work on legacy modernization, workflow redesign, integration planning, and phased technology upgrades that improve performance without disrupting essential services.',
+  },
+]
+
 function Layout() {
   return (
     <div className="page-shell">
@@ -837,6 +955,7 @@ function Layout() {
 
         <nav className="main-nav" aria-label="Main navigation">
           <NavLink to="/">Home</NavLink>
+          <NavLink to="/ai-solutions">AI Solutions</NavLink>
           <NavLink to="/services">Services</NavLink>
           <NavLink to="/industries">Industries</NavLink>
           <NavLink to="/locations">Locations</NavLink>
@@ -852,6 +971,7 @@ function Layout() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/ai-solutions" element={<AiSolutionsPage />} />
         <Route path="/services" element={<ServicesPage />} />
         {servicePages.map((service) => (
           <Route
@@ -888,6 +1008,8 @@ function Layout() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
 
+      <AdSenseBlock />
+
       <footer className="site-footer">
         <div>
           <p className="eyebrow">Let’s build resilient digital services</p>
@@ -902,50 +1024,19 @@ function Layout() {
   )
 }
 
-function GoogleAdHomeBanner() {
-  useEffect(() => {
-    const existingScript = document.querySelector(
-      'script[src*="googlesyndication.com/pagead/js/adsbygoogle.js"]'
-    )
-
-    if (!existingScript) {
-      const script = document.createElement('script')
-      script.async = true
-      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${GOOGLE_AD_CLIENT}`
-      script.crossOrigin = 'anonymous'
-      document.head.appendChild(script)
-    }
-
-    const pushAd = () => {
-      if (window[GOOGLE_AD_PUSH_KEY]) return
-
-      const adIns = document.querySelector('.home-page-google-ad ins.adsbygoogle')
-      if (window.adsbygoogle && adIns) {
-        window[GOOGLE_AD_PUSH_KEY] = true
-        window.adsbygoogle.push({})
-      }
-    }
-
-    if (window.adsbygoogle) {
-      pushAd()
-    } else {
-      window.setTimeout(pushAd, 500)
-    }
-  }, [])
-
+function AdSenseBlock() {
   return (
-    <section className="google-ad-section reveal">
-      <div className="google-ad-wrapper home-page-google-ad">
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client={GOOGLE_AD_CLIENT}
-          data-ad-slot={GOOGLE_AD_SLOT}
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        />
-      </div>
-    </section>
+    <div className="adsense-wrap" aria-label="Advertisement">
+      <div className="ad-label">Advertisement</div>
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block', width: '100%', minHeight: '90px' }}
+        data-ad-client="ca-pub-3352721202761209"
+        data-ad-slot="1234567890"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+    </div>
   )
 }
 
@@ -961,12 +1052,12 @@ function HomePage() {
       <main>
       <section className="hero-section reveal">
         <div className="hero-copy">
-          <p className="eyebrow">Custom software development for public sector & enterprise growth</p>
-          <h1>Digital solutions that improve operations, service delivery, and long-term impact.</h1>
+          <p className="eyebrow">AI innovation, software engineering, and digital transformation</p>
+          <h1>Building the next era of intelligent systems for public service and enterprise growth.</h1>
           <p className="hero-text">
-            Axonix Technologies is a software solutions company helping government agencies,
-            public institutions, and businesses build secure, scalable digital systems that simplify
-            operations, modernize legacy processes, and improve service outcomes.
+            Axonix Technologies helps government agencies, public institutions, and businesses design
+            practical AI solutions, custom software systems, and digital transformation strategies that
+            modernize operations, improve decision-making, and unlock better service outcomes.
           </p>
 
           <div className="hero-actions">
@@ -975,9 +1066,9 @@ function HomePage() {
           </div>
 
           <p className="hero-text">
-            From custom enterprise software development to workflow automation, digital government
-            platforms, and cloud modernization, we create technology systems designed for efficiency,
-            accountability, and measurable business value.
+            From AI-powered workflow automation and intelligent service platforms to custom enterprise
+            software, digital government systems, and cloud modernization, we create technology that is
+            efficient, accountable, secure, and ready for the AI era.
           </p>
 
           <div className="metrics-grid" aria-label="Key metrics">
@@ -1016,7 +1107,95 @@ function HomePage() {
         </div>
       </section>
 
-      <GoogleAdHomeBanner />
+      <section className="content-section reveal">
+        <div className="section-heading">
+          <p className="eyebrow">AI services</p>
+          <h2>Invent the next AI era with practical strategy, automation, and intelligent systems that work in the real world.</h2>
+        </div>
+
+        <div className="ai-grid">
+          {aiServices.map((item) => (
+            <article key={item.title} className="ai-card">
+              <span className="solution-index">{item.icon}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="cta-banner">
+          <div>
+            <p className="eyebrow">AI strategy starts here</p>
+            <h3>Build Your AI Strategy</h3>
+          </div>
+          <NavLink to="/ai-solutions" className="primary-btn">Invent the Next AI Era</NavLink>
+        </div>
+      </section>
+
+      <section className="content-section reveal">
+        <div className="story-layout">
+          <div className="story-copy">
+            <p className="eyebrow">Why organizations choose Axonix</p>
+            <h2>We help public and private organizations modernize the systems that shape service quality and operational performance.</h2>
+            <p>
+              Axonix Technologies works with government agencies, enterprises, healthcare organizations,
+              education providers, and growth-focused businesses that need practical digital solutions.
+              Our work sits at the intersection of strategy, software engineering, workflow design, and
+              service modernization. We focus on the systems that create friction in the real world: manual
+              approvals, fragmented reporting, legacy processes, slow service response, and disconnected data.
+            </p>
+            <p>
+              Rather than chasing technology trends, we build solutions around operational reality. That
+              means understanding where the work breaks down, what stakeholders need to see, and how a
+              better system improves trust, accountability, and service outcomes over time. Every engagement
+              aims to create a long-term digital capability, not just a one-time software project.
+            </p>
+          </div>
+
+          <div className="story-grid">
+            {companyStory.map((item) => (
+              <article key={item.title} className="story-card">
+                <span className="solution-index">A</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="content-section reveal">
+        <div className="section-heading">
+          <p className="eyebrow">Why Axonix</p>
+          <h2>Clear technology strategy paired with delivery that supports real operational outcomes.</h2>
+        </div>
+
+        <div className="feature-grid">
+          {valuePillars.map((pillar) => (
+            <article key={pillar.title} className="feature-card">
+              <span className="solution-index">A</span>
+              <h3>{pillar.title}</h3>
+              <p>{pillar.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-section alt-section reveal">
+        <div className="section-heading narrow">
+          <p className="eyebrow">Outcome-focused delivery</p>
+          <h2>We help organizations simplify service workflows and improve decision-making with better digital systems.</h2>
+        </div>
+
+        <div className="outcome-grid">
+          {outcomeHighlights.map((item) => (
+            <article key={item.title} className="outcome-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="promo-video-section reveal">
         <div className="section-heading">
@@ -1121,7 +1300,89 @@ function HomePage() {
           ))}
         </div>
       </section>
+
+      <section className="content-section reveal">
+        <div className="section-heading center-heading">
+          <p className="eyebrow">Frequently asked questions</p>
+          <h2>Questions organizations ask before starting a digital transformation project.</h2>
+        </div>
+
+        <div className="faq-list home-faq-list">
+          {homeFaqs.map((item) => (
+            <div key={item.question} className="faq-item">
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
+    </>
+  )
+}
+
+function AiSolutionsPage() {
+  return (
+    <>
+      <Seo
+        title="AI Solutions | Axonix Technologies"
+        description="Explore AI strategy, intelligent automation, AI experience design, and practical AI implementation services for public, enterprise, and digital-first organizations."
+      />
+      <main className="page-content service-landing-page reveal">
+        <header className="service-hero">
+          <p className="eyebrow">Axonix Technologies</p>
+          <h1>AI solutions designed to modernize operations and help organizations lead the next AI era.</h1>
+          <p className="hero-text">
+            The next AI era is not just about experimentation. It is about practical innovation that improves service delivery, automates repetitive work, and helps teams make better decisions with trusted, secure, and measurable technology systems.
+          </p>
+        </header>
+
+        <div className="service-cta-row">
+          <NavLink to="/contact" className="primary-btn">Build Your AI Strategy</NavLink>
+          <NavLink to="/services" className="secondary-btn">Explore other services</NavLink>
+        </div>
+
+        <section className="service-article">
+          <p>
+            AI adoption works best when it aligns to business reality. Organizations often struggle with fragmented data, inconsistent workflows, manual reporting, and slow service operations. That is where AI solutions become valuable: they simplify complexity, surface insight, automate repetitive work, and create a better experience for both staff and the people they serve.
+          </p>
+          <p>
+            Axonix Technologies works with public institutions, enterprises, and growth-focused organizations to turn AI from a concept into a practical capability. We support AI roadmapping, intelligent workflow design, document and decision support systems, and AI-enabled service experiences that are grounded in governance, business value, and long-term maintainability.
+          </p>
+          <p>
+            Whether your need is AI-assisted service triage, workflow optimization, data enrichment, or customer-facing intelligent experiences, our approach is designed to help your organization move responsibly into the AI era with clarity and confidence.
+          </p>
+        </section>
+
+        <div className="service-benefits">
+          <h2>What AI solutions can unlock</h2>
+          <ul>
+            <li>Faster operational decisions with AI-assisted analysis and prioritization</li>
+            <li>Reduced manual effort through task classification, routing, and workflow automation</li>
+            <li>Better stakeholder experiences through conversational and intelligent service interfaces</li>
+            <li>More strategic use of data with predictive insight and reporting support</li>
+            <li>Improved governance through structured AI implementation and human oversight</li>
+          </ul>
+        </div>
+
+        <section className="service-faqs">
+          <h2>AI engagement questions</h2>
+          <div className="faq-list">
+            <div className="faq-item">
+              <h3>What is a realistic first AI initiative?</h3>
+              <p>Start with a process that has repetitive work, clear business rules, and high-value outcomes when automated or assisted using AI.</p>
+            </div>
+            <div className="faq-item">
+              <h3>Can AI be implemented securely?</h3>
+              <p>Yes. Security, data quality, governance, and human review are essential parts of responsible AI implementation.</p>
+            </div>
+            <div className="faq-item">
+              <h3>How do you decide where AI fits?</h3>
+              <p>We map the business process, assess operational pain points, and identify where AI can reduce delay, improve quality, and create measurable value.</p>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   )
 }
