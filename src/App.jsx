@@ -1032,7 +1032,7 @@ function AdSenseBlock() {
         className="adsbygoogle"
         style={{ display: 'block', width: '100%', minHeight: '90px' }}
         data-ad-client="ca-pub-3352721202761209"
-        data-ad-slot="1234567890"
+        data-ad-slot="4384273536"
         data-ad-format="auto"
         data-full-width-responsive="true"
       />
