@@ -1009,7 +1009,6 @@ function Layout() {
       </Routes>
 
       <AdSenseBlock />
-      <AIChatWidget />
 
       <footer className="site-footer">
         <div>
@@ -1021,108 +1020,6 @@ function Layout() {
           <a href="tel:+917448554709">+91 74485 54709</a>
         </div>
       </footer>
-    </div>
-  )
-}
-
-function AIChatWidget() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [question, setQuestion] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [messages, setMessages] = useState([
-    {
-      role: 'assistant',
-      content:
-        'Hi, I am Axonix AI Strategy Advisor. Tell me about your business challenge, and I can suggest the most relevant service path.',
-    },
-  ])
-
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-
-    const trimmed = question.trim()
-    if (!trimmed || isLoading) {
-      return
-    }
-
-    const userMessage = { role: 'user', content: trimmed }
-    setMessages((current) => [...current, userMessage])
-    setQuestion('')
-    setIsLoading(true)
-
-    try {
-      const response = await fetch('/api/agent', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: trimmed }),
-      })
-
-      const data = await response.json()
-      const assistantMessage = {
-        role: 'assistant',
-        content: data.message || 'I need a little more detail to recommend the right path.',
-      }
-
-      setMessages((current) => [...current, assistantMessage])
-
-      if ((data.leadScore ?? 0) >= 50) {
-        setMessages((current) => [
-          ...current,
-          {
-            role: 'assistant',
-            content: `${data.cta || 'Book a consultation to turn this opportunity into a focused strategy or delivery plan.'} Visit the contact page to tell us more.`,
-          },
-        ])
-      }
-    } catch (error) {
-      setMessages((current) => [
-        ...current,
-        {
-          role: 'assistant',
-          content: 'The AI advisor is temporarily unavailable. Please try again or contact Axonix directly.',
-        },
-      ])
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
-  return (
-    <div className="ai-widget">
-      <button type="button" className="ai-launcher" onClick={() => setIsOpen((current) => !current)}>
-        {isOpen ? 'Close AI Advisor' : 'Ask AI Advisor'}
-      </button>
-
-      {isOpen && (
-        <div className="ai-panel">
-          <div className="ai-panel-header">
-            <div>
-              <p className="eyebrow">Axonix AI Advisor</p>
-              <h3>Business strategy assistant</h3>
-            </div>
-          </div>
-
-          <div className="ai-messages">
-            {messages.map((message, index) => (
-              <div key={`${message.role}-${index}`} className={`ai-message ${message.role}`}>
-                {message.content}
-              </div>
-            ))}
-          </div>
-
-          <form onSubmit={handleSubmit} className="ai-form">
-            <textarea
-              value={question}
-              onChange={(event) => setQuestion(event.target.value)}
-              rows="3"
-              placeholder="Describe your challenge, workflow pain point, or AI goal..."
-            />
-            <button type="submit" className="primary-btn" disabled={isLoading}>
-              {isLoading ? 'Thinking...' : 'Send'}
-            </button>
-          </form>
-        </div>
-      )}
     </div>
   )
 }
