@@ -1264,6 +1264,7 @@ function HomePage() {
             </p>
 
             <div className="location-note">
+              <span className="location-badge">Vellore, Tamil Nadu, India</span>
               <p>
                 Axonix Technologies is proudly based in Vellore, Tamil Nadu, India — a city known for its
                 rich heritage, strong educational culture, and spiritual landmarks. Our roots in this vibrant
@@ -1303,19 +1304,19 @@ function HomePage() {
         </div>
 
         <div className="vellore-heritage-grid">
-          <a className="vellore-heritage-card" href="https://maps.google.com/?q=Sripuram+Golden+Temple+Vellore" target="_blank" rel="noreferrer">
+          <a className="vellore-heritage-card sripuram-card" href="https://maps.google.com/?q=Sripuram+Golden+Temple+Vellore" target="_blank" rel="noreferrer">
             <span className="heritage-tag">Spiritual destination</span>
             <h3>Sripuram Golden Temple</h3>
             <p>A sacred and serene landmark in Vellore, embodying devotion, peace, and cultural heritage.</p>
           </a>
 
-          <a className="vellore-heritage-card" href="https://maps.google.com/?q=Vellore+Fort" target="_blank" rel="noreferrer">
+          <a className="vellore-heritage-card vellore-fort-card" href="https://maps.google.com/?q=Vellore+Fort" target="_blank" rel="noreferrer">
             <span className="heritage-tag">Historical landmark</span>
             <h3>Vellore Fort</h3>
             <p>A symbol of resilience and heritage, reflecting the historic depth and pride of the region.</p>
           </a>
 
-          <a className="vellore-heritage-card" href="https://maps.google.com/?q=Vallimalai+Murugan+Temple" target="_blank" rel="noreferrer">
+          <a className="vellore-heritage-card vallimalai-card" href="https://maps.google.com/?q=Vallimalai+Murugan+Temple" target="_blank" rel="noreferrer">
             <span className="heritage-tag">Sacred hill temple</span>
             <h3>Vallimalai Murugan Temple</h3>
             <p>A revered pilgrimage site known for its spiritual atmosphere and deep connection to faith.</p>

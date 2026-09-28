@@ -263,6 +263,29 @@
   border: 1px solid rgba(148, 163, 184, 0.12);
 }
 
+.location-note {
+  margin-top: 10px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(126, 231, 208, 0.12);
+  border: 1px solid rgba(126, 231, 208, 0.28);
+  color: #b9fff1;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .location-note p {
   margin-bottom: 14px;
 }
@@ -315,6 +338,40 @@
   transform: translateY(-2px);
   border-color: rgba(126, 231, 208, 0.35);
   box-shadow: 0 18px 34px rgba(15, 23, 42, 0.25);
+}
+
+.sripuram-card {
+  position: relative;
+  min-height: 350px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(6, 12, 18, 0.16), rgba(6, 12, 18, 0.7)),
+    url('/sripuram%20Sri%20Narayani%20temple.jpg') center/cover no-repeat;
+}
+
+.vallimalai-card {
+  position: relative;
+  min-height: 350px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(6, 12, 18, 0.16), rgba(6, 12, 18, 0.7)),
+    url('/vallimalai_murugan.jpg') center/cover no-repeat;
+}
+
+.vellore-fort-card {
+  position: relative;
+  min-height: 350px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(6, 12, 18, 0.16), rgba(6, 12, 18, 0.7)),
+    url('/vellore_fort.jpg') center/cover no-repeat;
+}
+
+.sripuram-card > *,
+.vallimalai-card > *,
+.vellore-fort-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .heritage-tag {
