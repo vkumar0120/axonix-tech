@@ -1395,6 +1395,46 @@ function HomePage() {
           </div>
         </div>
 
+        <div className="featured-product-banner secondary-product-banner" style={{ marginTop: '22px' }}>
+          <div className="featured-product-copy">
+            <span className="feature-badge">Featured app</span>
+            <h3>Krits Music Mobile App</h3>
+            <p>
+              Krits is a mobile learning app designed to make Carnatic music education more accessible,
+              structured, and engaging for students at every level.
+            </p>
+            <p>
+              The app provides complete lessons for Carnatic music and covers the 72 Melakarthas,
+              helping learners build a stronger foundation in theory, practice, and musical understanding.
+            </p>
+            <p>
+              It also includes a wide collection of varnams composed by Smt. Rukmani Sivakumar, offering students
+              valuable practice material rooted in traditional Carnatic learning.
+            </p>
+
+            <div className="featured-product-tags">
+              <span>Carnatic Music</span>
+              <span>72 Melakarthas</span>
+              <span>Varnams</span>
+            </div>
+          </div>
+
+          <div className="featured-product-aside">
+            <div className="feature-stat">
+              <strong>72</strong>
+              <span>Melakartha foundation</span>
+            </div>
+            <div className="feature-stat">
+              <strong>Full</strong>
+              <span>Lesson coverage for learners</span>
+            </div>
+            <div className="feature-stat">
+              <strong>Mobile</strong>
+              <span>Accessible music education</span>
+            </div>
+          </div>
+        </div>
+
         <div className="industry-grid" style={{ marginTop: '22px' }}>
           {solutions
             .filter((item) => item.title !== 'Naadi Astro Service')
