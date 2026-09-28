@@ -1262,6 +1262,26 @@ function HomePage() {
               better system improves trust, accountability, and service outcomes over time. Every engagement
               aims to create a long-term digital capability, not just a one-time software project.
             </p>
+
+            <div className="location-note">
+              <p>
+                Axonix Technologies is proudly based in Vellore, Tamil Nadu, India — a city known for its
+                rich heritage, strong educational culture, and spiritual landmarks. Our roots in this vibrant
+                region inspire us to build modern digital systems that are reliable, meaningful, and grounded
+                in the values of progress and service.
+              </p>
+              <div className="heritage-list">
+                <a href="https://maps.google.com/?q=Sripuram+Golden+Temple+Vellore" target="_blank" rel="noreferrer">
+                  Sripuram Golden Temple
+                </a>
+                <a href="https://maps.google.com/?q=Vellore+Fort" target="_blank" rel="noreferrer">
+                  Vellore Fort
+                </a>
+                <a href="https://maps.google.com/?q=Vallimalai+Murugan+Temple" target="_blank" rel="noreferrer">
+                  Vallimalai Murugan Temple
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="story-grid">
@@ -1273,6 +1293,33 @@ function HomePage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="content-section reveal">
+        <div className="section-heading narrow">
+          <p className="eyebrow">Our roots</p>
+          <h2>Vellore is home to heritage, devotion, and a spirit of growth that inspires our work.</h2>
+        </div>
+
+        <div className="vellore-heritage-grid">
+          <a className="vellore-heritage-card" href="https://maps.google.com/?q=Sripuram+Golden+Temple+Vellore" target="_blank" rel="noreferrer">
+            <span className="heritage-tag">Spiritual destination</span>
+            <h3>Sripuram Golden Temple</h3>
+            <p>A sacred and serene landmark in Vellore, embodying devotion, peace, and cultural heritage.</p>
+          </a>
+
+          <a className="vellore-heritage-card" href="https://maps.google.com/?q=Vellore+Fort" target="_blank" rel="noreferrer">
+            <span className="heritage-tag">Historical landmark</span>
+            <h3>Vellore Fort</h3>
+            <p>A symbol of resilience and heritage, reflecting the historic depth and pride of the region.</p>
+          </a>
+
+          <a className="vellore-heritage-card" href="https://maps.google.com/?q=Vallimalai+Murugan+Temple" target="_blank" rel="noreferrer">
+            <span className="heritage-tag">Sacred hill temple</span>
+            <h3>Vallimalai Murugan Temple</h3>
+            <p>A revered pilgrimage site known for its spiritual atmosphere and deep connection to faith.</p>
+          </a>
         </div>
       </section>
 

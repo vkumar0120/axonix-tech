@@ -255,6 +255,91 @@
   font-size: 1.02rem;
 }
 
+.location-note {
+  margin-top: 10px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.location-note p {
+  margin-bottom: 14px;
+}
+
+.heritage-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.heritage-list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  background: rgba(126, 231, 208, 0.08);
+  border: 1px solid rgba(126, 231, 208, 0.25);
+  color: #dffaf5;
+  font-weight: 600;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.heritage-list a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(126, 231, 208, 0.45);
+}
+
+.vellore-heritage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.vellore-heritage-card {
+  display: block;
+  padding: 22px 20px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(12, 22, 35, 0.9), rgba(16, 28, 40, 0.9));
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vellore-heritage-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(126, 231, 208, 0.35);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.25);
+}
+
+.heritage-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #7ee7d0;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.vellore-heritage-card h3 {
+  margin: 0 0 10px;
+  color: #edf5ff;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.vellore-heritage-card p {
+  margin: 0;
+  color: #c2d2e2;
+  line-height: 1.7;
+}
+
 .story-grid {
   display: grid;
   gap: 18px;
