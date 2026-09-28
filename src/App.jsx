@@ -95,6 +95,13 @@ const solutions = [
       'Software support, monitoring, upgrades, and managed maintenance services that keep critical systems secure, stable, and fully operational.',
     icon: '06',
   },
+  {
+    title: 'Naadi Astro Service',
+    description:
+      'A multilingual astrology and consultation platform built for online guidance, lead generation, appointment booking, and personalized spiritual service experiences.',
+    icon: 'NA',
+    externalUrl: 'https://naadiastroservice.com',
+  },
 ]
 
 const sectors = ['Government', 'Healthcare', 'Education', 'Utilities', 'Logistics', 'Finance', 'Manufacturing', 'NGOs']
@@ -1335,23 +1342,67 @@ function HomePage() {
 
       <section className="content-section reveal">
         <div className="section-heading">
-          <p className="eyebrow">What we solve</p>
-          <h2>Technology systems that improve service, accountability, and performance.</h2>
+          <p className="eyebrow">Products we deliver</p>
+          <h2>Portfolio-ready digital products designed for real-world user engagement and service growth.</h2>
         </div>
 
-        <div className="solutions-grid">
-          {solutions.map((item) => {
-            const route = servicePages.find((page) => page.label === item.title)?.slug
-            return (
-              <NavLink key={item.title} to={route ? `/services/${route}` : '/services'} className="content-card-link">
-                <article className="solution-card">
-                  <span className="solution-index">{item.icon}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              </NavLink>
-            )
-          })}
+        <div className="featured-product-banner">
+          <div className="featured-product-copy">
+            <span className="feature-badge">Featured delivery</span>
+            <h3>Naadi Astro Service</h3>
+            <p>
+              With over 25 years of dedicated experience in the sacred tradition of Nadi Astrology,
+              Guruji Thillaimani has guided thousands of seekers from around the world on their spiritual journey.
+            </p>
+            <p>
+              Born and raised in Vaitheeswaran Koil, the epicenter of Nadi Astrology, Guruji inherited this
+              divine knowledge through a lineage of authentic Nadi readers. His profound understanding of
+              ancient palm leaves and dedication to preserving this sacred tradition has made him one of the
+              most trusted names in Sree Agasthiya Maha Siva Nadi Astrology.
+            </p>
+            <p>
+              My mission is simple and heartfelt: to provide you access to authentic Nadi Astrology readings
+              and support you in discovering guidance, purpose, and a stronger connection to your life's path.
+              Every reading is conducted with utmost care, ensuring accuracy and spiritual integrity.
+            </p>
+
+            <div className="featured-product-tags">
+              <span>Authentic Nadi</span>
+              <span>Spiritual Guidance</span>
+              <span>Consultation</span>
+            </div>
+
+            <div className="featured-product-actions">
+              <a href="https://naadiastroservice.com" target="_blank" rel="noreferrer" className="primary-btn">
+                Visit Platform
+              </a>
+            </div>
+          </div>
+
+          <div className="featured-product-aside">
+            <div className="feature-stat">
+              <strong>25+</strong>
+              <span>Years of spiritual guidance</span>
+            </div>
+            <div className="feature-stat">
+              <strong>Global</strong>
+              <span>Seekers served across the world</span>
+            </div>
+            <div className="feature-stat">
+              <strong>Authentic</strong>
+              <span>Traditional Nadi lineage and spiritual integrity</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="industry-grid" style={{ marginTop: '22px' }}>
+          {solutions
+            .filter((item) => item.title !== 'Naadi Astro Service')
+            .map((item) => (
+              <div key={item.title} className="industry-pill">
+                {item.title}
+              </div>
+            ))}
         </div>
       </section>
 
